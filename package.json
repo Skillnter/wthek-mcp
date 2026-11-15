@@ -1,6 +1,6 @@
 {
   "name": "@wthek/mcp",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.1",
   "description": "Model Context Protocol (MCP) server for @wthek and http-error-kit. Provides AI coding agents with tools to audit error handling, look up HTTP standards, and retrieve verified framework recipes.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
