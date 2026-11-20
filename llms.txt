@@ -1,0 +1,89 @@
+# @wthek/mcp (wthek-mcp)
+
+> Model Context Protocol (MCP) server for @wthek and http-error-kit.
+
+## Overview
+`wthek-mcp` is a lightweight, local Model Context Protocol (MCP) server running over standard input/output (`stdio`). It equips AI coding agents (Claude Desktop, Cursor, Antigravity, Devin, Copilot) with deterministic diagnostic tools to audit error-handling patterns, resolve RFC HTTP status codes, and generate verified, copy-paste framework recipes for Express, Fastify, Hono, Koa, NestJS, and Restify.
+
+## Installation & Running
+
+### Run directly with npx
+```bash
+npx wthek-mcp
+```
+
+### Install in project
+```bash
+npm install @wthek/mcp http-error-kit http-response-status-code
+```
+
+## MCP Configuration
+
+### Cursor (`.cursor/mcp.json`)
+```json
+{
+  "mcpServers": {
+    "wthek": {
+      "command": "npx",
+      "args": ["wthek-mcp"]
+    }
+  }
+}
+```
+
+### Claude Desktop (`claude_desktop_config.json`)
+```json
+{
+  "mcpServers": {
+    "wthek": {
+      "command": "npx",
+      "args": ["wthek-mcp"]
+    }
+  }
+}
+```
+
+## Available MCP Tools
+
+### 1. `lookup_http_status`
+Looks up RFC standards, descriptions, error class names, and recommended headers.
+- **Parameters**: `query` (string, e.g. "404", "NOT_FOUND", "422")
+- **Returns**: Status code metadata including numeric code, name, description, recommended headers, and `@wthek` import suggestions.
+
+### 2. `get_framework_recipe`
+Provides verified setup recipes and package lists for web frameworks and validation libraries.
+- **Parameters**:
+  - `framework` (string: "express" | "fastify" | "hono" | "koa" | "nestjs" | "restify")
+  - `validator` (optional string: "zod" | "typebox" | "valibot")
+- **Returns**: Required npm packages and full copy-paste TypeScript setup.
+
+### 3. `audit_error_handling`
+Audits source code for common error handling anti-patterns.
+- **Parameters**: `code` (string: source code to analyze)
+- **Returns**: List of detected anti-patterns, severities, descriptions, and `@wthek` remediation recommendations.
+
+## Programmatic Usage
+All tools can also be imported directly in TypeScript / JavaScript:
+```typescript
+import {
+  lookupHttpStatus,
+  getFrameworkRecipe,
+  auditErrorHandling,
+  createWthekMcpServer,
+} from "@wthek/mcp";
+
+// HTTP status lookup
+const info = lookupHttpStatus(404);
+
+// Verified framework recipe
+const recipe = getFrameworkRecipe("express", "zod");
+
+// Code audit
+const report = auditErrorHandling(sourceCode);
+```
+
+## Safety Rules for AI Agents
+1. When generating API route error handling, invoke `get_framework_recipe` to eliminate package hallucinations.
+2. Always audit generated route handlers with `audit_error_handling` before presenting them to users.
+3. Use `lookup_http_status` to verify RFC-compliant headers (e.g., `Retry-After` on 429/503, `WWW-Authenticate` on 401).
+

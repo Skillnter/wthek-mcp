@@ -1,6 +1,13 @@
 /**
  * Mapping of common HTTP status codes to their corresponding class names in http-error-kit.
  * @constant
+ *
+ * @example
+ * ```typescript
+ * import { STATUS_CLASS_MAP } from "@wthek/mcp";
+ *
+ * const notFoundClass = STATUS_CLASS_MAP[404]; // "NotFoundError"
+ * ```
  */
 export const STATUS_CLASS_MAP: Record<number, string> = {
   400: "BadRequestError",

@@ -25,7 +25,7 @@ import {
 export const createWthekMcpServer = (): McpServer => {
   const server = new McpServer({
     name: "wthek-mcp",
-    version: "1.0.0",
+    version: "1.0.0-beta.2",
   });
 
   (server as any).tool(

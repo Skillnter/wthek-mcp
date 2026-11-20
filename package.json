@@ -1,6 +1,6 @@
 {
   "name": "@wthek/mcp",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "Model Context Protocol (MCP) server for @wthek and http-error-kit. Provides AI coding agents with tools to audit error handling, look up HTTP standards, and retrieve verified framework recipes.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -34,9 +34,15 @@
     "mcp-server",
     "model-context-protocol",
     "ai-agent",
+    "agent-skill",
     "claude",
     "cursor",
+    "copilot",
     "antigravity",
+    "rfc-7807",
+    "rfc-9457",
+    "structured-errors",
+    "api-error-response",
     "error-handling",
     "http-error-kit",
     "wthek",
@@ -52,8 +58,8 @@
   "homepage": "https://github.com/Skillnter/wthek-mcp#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
-    "http-error-kit": "^1.4.0",
-    "http-response-status-code": "^1.8.0",
+    "http-error-kit": "^1.5.0",
+    "http-response-status-code": "^1.9.0",
     "zod": "^3.24.0"
   },
   "devDependencies": {
@@ -74,6 +80,7 @@
   "files": [
     "dist/**/*.js",
     "dist/**/*.d.ts",
+    "llms.txt",
     "LICENSE"
   ],
   "funding": [
