@@ -3,6 +3,17 @@ import type { IAuditRuleDefinition } from "../interfaces";
 /**
  * Standard audit rules for HTTP error handling in Node.js applications.
  * @constant
+ *
+ * @example
+ * ```typescript
+ * import { AUDIT_RULES } from "@wthek/mcp";
+ *
+ * for (const rule of AUDIT_RULES) {
+ *   if (rule.isMatch(sourceCode)) {
+ *     console.log(`Detected rule violation: ${rule.rule}`);
+ *   }
+ * }
+ * ```
  */
 export const AUDIT_RULES: IAuditRuleDefinition[] = [
   {

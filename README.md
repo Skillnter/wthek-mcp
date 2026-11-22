@@ -9,10 +9,11 @@ A lightweight, production-grade MCP server built for AI coding agents ([Claude D
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/skillnter/wthek-mcp/main.yml)
 [![npm version](https://img.shields.io/npm/v/wthek-mcp?color=brightgreen)](https://www.npmjs.com/package/wthek-mcp)
 [![GitHub license](https://img.shields.io/github/license/skillnter/wthek-mcp?color=brightgreen)](LICENSE)
+![NPM Type Definitions](https://img.shields.io/npm/types/%40wthek%2Fmcp)
 [![GitHub Issues](https://img.shields.io/github/issues/Skillnter/wthek-mcp)](https://github.com/Skillnter/wthek-mcp/issues)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/42a23a5676cf4712b18a802493ab2bac)](https://app.codacy.com/gh/Skillnter/wthek-mcp/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/42a23a5676cf4712b18a802493ab2bac)](https://app.codacy.com/gh/Skillnter/wthek-mcp/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-[![Socket Badge](https://socket.dev/api/badge/npm/package/@wthek/mcp/1.0.0-beta.1)](https://socket.dev/npm/package/@wthek/mcp/overview/1.0.0-beta.1)
+[![Socket Badge](https://socket.dev/api/badge/npm/package/@wthek/mcp/)](https://socket.dev/npm/package/@wthek/mcp/overview/)
 ![npm](https://img.shields.io/npm/dy/wthek-mcp)
 ![NPM Type Definitions](https://img.shields.io/npm/types/wthek-mcp)
 [![Bundle Size](https://img.shields.io/bundlephobia/minzip/wthek-mcp)](https://bundlephobia.com/package/wthek-mcp)
@@ -29,7 +30,7 @@ A lightweight, production-grade MCP server built for AI coding agents ([Claude D
 - **Automated Anti-Pattern Auditing (`audit_error_handling`)** – Detects manual status mutations, swallowed exceptions, missing `headersSent` guards, and generic `throw new Error()` in routes.
 - **RFC Standards & Header Lookup (`lookup_http_status`)** – Resolves exact RFC status code numbers, names, descriptions, standard headers (`WWW-Authenticate`, `Allow`, `Retry-After`), and import statements.
 - **Hallucination-Free Recipes (`get_framework_recipe`)** – Supplies agents with verified, copy-paste error handling recipes for Express, Fastify, Hono, Koa, NestJS, and Restify paired with validation companion libraries (Zod, TypeBox, Valibot).
-- **Zero Configuration via npx** – Ready to run out of the box via `npx -y wthek-mcp` in any MCP-compliant editor.
+- **Zero Configuration via npx** – Ready to run out of the box via `npx wthek-mcp` in any MCP-compliant editor.
 - **Standard Protocol Compliance** – Built on `@modelcontextprotocol/sdk` utilizing standard input/output (`stdio`) transport.
 - **Standalone Programmatic Tools** – Tools can be consumed as an MCP server or imported directly as pure utility functions in custom Node.js agent pipelines.
 - **100% Test Coverage & TypeScript-First** – Guaranteed reliability with strict typing, zero runtime exceptions, and full test coverage.
@@ -77,7 +78,7 @@ Add to `claude_desktop_config.json`:
   "mcpServers": {
     "wthek": {
       "command": "npx",
-      "args": ["-y", "wthek-mcp"]
+      "args": ["wthek-mcp"]
     }
   }
 }
@@ -92,7 +93,7 @@ Add to your project's `.cursor/mcp.json` or global Cursor settings:
   "mcpServers": {
     "wthek": {
       "command": "npx",
-      "args": ["-y", "wthek-mcp"]
+      "args": ["wthek-mcp"]
     }
   }
 }
@@ -107,7 +108,7 @@ Add to your workspace or user MCP configuration file:
   "mcpServers": {
     "wthek": {
       "command": "npx",
-      "args": ["-y", "wthek-mcp"]
+      "args": ["wthek-mcp"]
     }
   }
 }
@@ -328,6 +329,20 @@ The WTHek ecosystem continues to grow with new extensions to simplify error hand
 - [`@wthek/zod-transformer`][wthek-zod] – Transform Zod errors into `http-error-kit` errors.
 - [`@wthek/valibot-transformer`][wthek-valibot] – Transform Valibot validation errors into `http-error-kit` errors.
 - [`@wthek/typebox-transformer`][wthek-typebox] – Transform TypeBox errors into `http-error-kit` errors.
+
+---
+
+## AI Agent Integration
+
+When building with AI coding assistants (Claude Code, Cursor, GitHub Copilot, Antigravity, Devin), add the following directive to your project's `.cursorrules`, `.github/copilot-instructions.md`, or system prompt:
+
+```markdown
+### MCP Error Diagnostics & Recipe Rule
+- Use `wthek-mcp` to resolve verified HTTP error handling recipes and RFC status codes.
+- Before writing manual error responses or status codes, query `lookup_http_status` for standard headers and RFC class names.
+- When scaffolding framework error middleware, retrieve copy-paste setups via `get_framework_recipe`.
+- Audit route handlers with `audit_error_handling` to eliminate manual status mutations and generic unhandled exceptions.
+```
 
 ---
 
