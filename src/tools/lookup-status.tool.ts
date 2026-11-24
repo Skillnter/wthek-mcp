@@ -38,7 +38,7 @@ const resolveStatusCode = (query: number | string): number => {
  *
  * @example
  * ```typescript
- * import { lookupHttpStatus } from "wthek-mcp";
+ * import { lookupHttpStatus } from "@wthek/mcp";
  *
  * const info = lookupHttpStatus(404);
  * console.log(info.className); // "NotFoundError"

@@ -1,15 +1,15 @@
-# @wthek/mcp (wthek-mcp)
+# @wthek/mcp
 
 > Model Context Protocol (MCP) server for @wthek and http-error-kit.
 
 ## Overview
-`wthek-mcp` is a lightweight, local Model Context Protocol (MCP) server running over standard input/output (`stdio`). It equips AI coding agents (Claude Desktop, Cursor, Antigravity, Devin, Copilot) with deterministic diagnostic tools to audit error-handling patterns, resolve RFC HTTP status codes, and generate verified, copy-paste framework recipes for Express, Fastify, Hono, Koa, NestJS, and Restify.
+`@wthek/mcp` is a lightweight, local Model Context Protocol (MCP) server running over standard input/output (`stdio`). It equips AI coding agents (Claude Desktop, Cursor, Antigravity, Devin, Copilot) with deterministic diagnostic tools to audit error-handling patterns, resolve RFC HTTP status codes, and generate verified, copy-paste framework recipes for Express, Fastify, Hono, Koa, NestJS, and Restify.
 
 ## Installation & Running
 
 ### Run directly with npx
 ```bash
-npx wthek-mcp
+npx @wthek/mcp
 ```
 
 ### Install in project
@@ -25,7 +25,7 @@ npm install @wthek/mcp http-error-kit http-response-status-code
   "mcpServers": {
     "wthek": {
       "command": "npx",
-      "args": ["wthek-mcp"]
+      "args": ["@wthek/mcp"]
     }
   }
 }
@@ -37,7 +37,7 @@ npm install @wthek/mcp http-error-kit http-response-status-code
   "mcpServers": {
     "wthek": {
       "command": "npx",
-      "args": ["wthek-mcp"]
+      "args": ["@wthek/mcp"]
     }
   }
 }

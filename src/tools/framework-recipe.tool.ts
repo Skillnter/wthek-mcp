@@ -253,7 +253,7 @@ const normalizeValidator = (input?: string): SupportedValidator | undefined => {
  *
  * @example
  * ```typescript
- * import { getFrameworkRecipe } from "wthek-mcp";
+ * import { getFrameworkRecipe } from "@wthek/mcp";
  *
  * const recipe = getFrameworkRecipe("express", "zod");
  * console.log(recipe.packages);

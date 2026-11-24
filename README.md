@@ -4,9 +4,13 @@
 
 A lightweight, production-grade MCP server built for AI coding agents ([Claude Desktop][claude-desktop], [Cursor][cursor], [Antigravity][antigravity], etc.). Empowers agents to audit source code for error anti-patterns, resolve exact RFC status codes and headers, and generate verified `@wthek` error-handling setups for Express, Fastify, Hono, Koa, NestJS, and Restify.
 
-> 💡 **What the HEK?! AI agents hallucinating error-handling packages or writing manual `res.status(500).json()` calls?** `wthek-mcp` runs locally alongside your AI editor over standard input/output (`stdio`), giving models deterministic tools to look up HTTP standards, generate copy-paste framework recipes, and audit source code before deploying to production.
+> 💡 **What the HEK?! AI agents hallucinating error-handling packages or writing manual `res.status(500).json()` calls?** `@wthek/mcp` runs locally alongside your AI editor over standard input/output (`stdio`), giving models deterministic tools to look up HTTP standards, generate copy-paste framework recipes, and audit source code before deploying to production.
 
 [![wthek-mcp MCP server – quality and maintenance score on Glama](https://glama.ai/mcp/servers/Skillnter/wthek-mcp/badges/score.svg)](https://glama.ai/mcp/servers/Skillnter/wthek-mcp)
+[![MCP Registry](https://img.shields.io/badge/MCP%20Registry-io.github.Skillnter%2Fwthek--mcp-blue?logo=modelcontextprotocol)](https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.Skillnter/wthek-mcp)
+[![MCP Server](https://badge.mcpx.dev?type=server&features=tools)](https://modelcontextprotocol.io)
+[![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_MCP_Server-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=wthek-mcp&config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22%40wthek%2Fmcp%22%5D%7D)
+---
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/skillnter/wthek-mcp/main.yml)
 [![npm version](https://img.shields.io/npm/v/%40wthek%2Fmcp?color=brightgreen)](https://www.npmjs.com/package/%40wthek%2Fmcp)
 [![GitHub license](https://img.shields.io/github/license/skillnter/wthek-mcp?color=brightgreen)](LICENSE)
@@ -32,7 +36,7 @@ A lightweight, production-grade MCP server built for AI coding agents ([Claude D
 - **Automated Anti-Pattern Auditing (`audit_error_handling`)** – Detects manual status mutations, swallowed exceptions, missing `headersSent` guards, and generic `throw new Error()` in routes.
 - **RFC Standards & Header Lookup (`lookup_http_status`)** – Resolves exact RFC status code numbers, names, descriptions, standard headers (`WWW-Authenticate`, `Allow`, `Retry-After`), and import statements.
 - **Hallucination-Free Recipes (`get_framework_recipe`)** – Supplies agents with verified, copy-paste error handling recipes for Express, Fastify, Hono, Koa, NestJS, and Restify paired with validation companion libraries (Zod, TypeBox, Valibot).
-- **Zero Configuration via npx** – Ready to run out of the box via `npx wthek-mcp` in any MCP-compliant editor.
+- **Zero Configuration via npx** – Ready to run out of the box via `npx @wthek/mcp` in any MCP-compliant editor.
 - **Standard Protocol Compliance** – Built on `@modelcontextprotocol/sdk` utilizing standard input/output (`stdio`) transport.
 - **Standalone Programmatic Tools** – Tools can be consumed as an MCP server or imported directly as pure utility functions in custom Node.js agent pipelines.
 - **100% Test Coverage & TypeScript-First** – Guaranteed reliability with strict typing, zero runtime exceptions, and full test coverage.
@@ -66,7 +70,7 @@ A lightweight, production-grade MCP server built for AI coding agents ([Claude D
 
 ## Quick Start: Configuring Your AI Agent
 
-No installation is necessary. Configure your agent to launch `wthek-mcp` via `npx`:
+No installation is necessary. Configure your agent to launch `@wthek/mcp` via `npx`:
 
 ### Claude Desktop Configuration
 
@@ -80,7 +84,7 @@ Add to `claude_desktop_config.json`:
   "mcpServers": {
     "wthek": {
       "command": "npx",
-      "args": ["wthek-mcp"]
+      "args": ["@wthek/mcp"]
     }
   }
 }
@@ -95,7 +99,7 @@ Add to your project's `.cursor/mcp.json` or global Cursor settings:
   "mcpServers": {
     "wthek": {
       "command": "npx",
-      "args": ["wthek-mcp"]
+      "args": ["@wthek/mcp"]
     }
   }
 }
@@ -110,7 +114,7 @@ Add to your workspace or user MCP configuration file:
   "mcpServers": {
     "wthek": {
       "command": "npx",
-      "args": ["wthek-mcp"]
+      "args": ["@wthek/mcp"]
     }
   }
 }
@@ -216,7 +220,7 @@ Audits source code snippets for common error-handling anti-patterns and suggests
 You can embed the server into custom Node.js agents, test suites, or orchestrators:
 
 ```typescript
-import { createWthekMcpServer } from "wthek-mcp";
+import { createWthekMcpServer } from "@wthek/mcp";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 
 const server = createWthekMcpServer();
@@ -233,7 +237,7 @@ import {
   lookupHttpStatus,
   getFrameworkRecipe,
   auditErrorHandling,
-} from "wthek-mcp";
+} from "@wthek/mcp";
 
 // Look up status metadata
 const statusInfo = lookupHttpStatus(401);
@@ -284,14 +288,14 @@ import type {
   IHttpStatusLookupResult,
   SupportedFramework,
   SupportedValidator,
-} from "wthek-mcp";
+} from "@wthek/mcp";
 
 import {
   AUDIT_RULES,
   COMPANION_TRANSFORMERS,
   STATUS_CLASS_MAP,
   STATUS_HEADERS_MAP,
-} from "wthek-mcp";
+} from "@wthek/mcp";
 ```
 
 ---
@@ -307,7 +311,7 @@ import {
 1. **Sandboxed Code Execution**:
    `audit_error_handling` operates purely via static regular expression matching on provided code strings. It never evaluates (`eval`), executes, or loads external code.
 2. **Safe Transports**:
-   `wthek-mcp` connects via local standard input/output (`stdio`), ensuring tools run locally on the developer's machine without exposing network ports or listening sockets.
+   `@wthek/mcp` connects via local standard input/output (`stdio`), ensuring tools run locally on the developer's machine without exposing network ports or listening sockets.
 3. **Defensive Input Validation**:
    Status code lookups and recipe parameters are normalized to prevent prototype pollution or unhandled runtime exceptions.
 
@@ -340,7 +344,7 @@ When building with AI coding assistants (Claude Code, Cursor, GitHub Copilot, An
 
 ```markdown
 ### MCP Error Diagnostics & Recipe Rule
-- Use `wthek-mcp` to resolve verified HTTP error handling recipes and RFC status codes.
+- Use `@wthek/mcp` to resolve verified HTTP error handling recipes and RFC status codes.
 - Before writing manual error responses or status codes, query `lookup_http_status` for standard headers and RFC class names.
 - When scaffolding framework error middleware, retrieve copy-paste setups via `get_framework_recipe`.
 - Audit route handlers with `audit_error_handling` to eliminate manual status mutations and generic unhandled exceptions.
@@ -376,7 +380,7 @@ You can also use the following cryptocurrency addresses:
 
 ## License
 
-`wthek-mcp` is open-sourced software licensed under the [MIT license](LICENSE) by [Himanshu Bansal][skillnter].
+`@wthek/mcp` is open-sourced software licensed under the [MIT license](LICENSE) by [Himanshu Bansal][skillnter].
 
 [skillnter]: https://github.com/Skillnter
 [http-error-kit]: https://www.npmjs.com/package/http-error-kit

@@ -11,7 +11,7 @@ import type { IAuditIssue, IAuditResult } from "../interfaces";
  *
  * @example
  * ```typescript
- * import { auditErrorHandling } from "wthek-mcp";
+ * import { auditErrorHandling } from "@wthek/mcp";
  *
  * const report = auditErrorHandling(`
  *   app.get("/user", async (req, res) => {
