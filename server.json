@@ -1,6 +1,6 @@
 {
     "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-    "name": "io.github.skillnter/wthek-mcp",
+    "name": "io.github.Skillnter/wthek-mcp",
     "title": "WTHek MCP Server",
     "description": "MCP server for RFC 7807/9457 HTTP Problem Details, status codes, and API error auditing.",
     "repository": {
