@@ -14,7 +14,7 @@ import {
  *
  * @example
  * ```typescript
- * import { createWthekMcpServer } from "wthek-mcp";
+ * import { createWthekMcpServer } from "@wthek/mcp";
  * import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
  *
  * const server = createWthekMcpServer();
@@ -25,7 +25,7 @@ import {
 export const createWthekMcpServer = (): McpServer => {
   const server = new McpServer({
     name: "wthek-mcp",
-    version: "1.0.1",
+    version: "1.0.2",
   });
 
   (server as any).tool(
