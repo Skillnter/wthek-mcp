@@ -7,6 +7,10 @@ A lightweight, production-grade MCP server built for AI coding agents ([Claude D
 > 💡 **What the HEK?! AI agents hallucinating error-handling packages or writing manual `res.status(500).json()` calls?** `@wthek/mcp` runs locally alongside your AI editor over standard input/output (`stdio`), giving models deterministic tools to look up HTTP standards, generate copy-paste framework recipes, and audit source code before deploying to production.
 
 [![wthek-mcp MCP server – quality and maintenance score on Glama](https://glama.ai/mcp/servers/Skillnter/wthek-mcp/badges/score.svg)](https://glama.ai/mcp/servers/Skillnter/wthek-mcp)
+[![MCP Registry](https://img.shields.io/badge/MCP%20Registry-io.github.Skillnter%2Fwthek--mcp-blue?logo=modelcontextprotocol)](https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.Skillnter/wthek-mcp)
+[![MCP Server](https://badge.mcpx.dev?type=server&features=tools)](https://modelcontextprotocol.io)
+[![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_MCP_Server-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=wthek-mcp&config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22%40wthek%2Fmcp%22%5D%7D)
+---
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/skillnter/wthek-mcp/main.yml)
 [![npm version](https://img.shields.io/npm/v/%40wthek%2Fmcp?color=brightgreen)](https://www.npmjs.com/package/%40wthek%2Fmcp)
 [![GitHub license](https://img.shields.io/github/license/skillnter/wthek-mcp?color=brightgreen)](LICENSE)
