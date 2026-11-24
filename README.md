@@ -6,6 +6,7 @@ A lightweight, production-grade MCP server built for AI coding agents ([Claude D
 
 > 💡 **What the HEK?! AI agents hallucinating error-handling packages or writing manual `res.status(500).json()` calls?** `wthek-mcp` runs locally alongside your AI editor over standard input/output (`stdio`), giving models deterministic tools to look up HTTP standards, generate copy-paste framework recipes, and audit source code before deploying to production.
 
+[![wthek-mcp MCP server – quality and maintenance score on Glama](https://glama.ai/mcp/servers/Skillnter/wthek-mcp/badges/score.svg)](https://glama.ai/mcp/servers/Skillnter/wthek-mcp)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/skillnter/wthek-mcp/main.yml)
 [![npm version](https://img.shields.io/npm/v/%40wthek%2Fmcp?color=brightgreen)](https://www.npmjs.com/package/%40wthek%2Fmcp)
 [![GitHub license](https://img.shields.io/github/license/skillnter/wthek-mcp?color=brightgreen)](LICENSE)
