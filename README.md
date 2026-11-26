@@ -10,6 +10,7 @@ A lightweight, production-grade MCP server built for AI coding agents ([Claude D
 [![MCP Registry](https://img.shields.io/badge/MCP%20Registry-io.github.Skillnter%2Fwthek--mcp-blue?logo=modelcontextprotocol)](https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.Skillnter/wthek-mcp)
 [![MCP Server](https://badge.mcpx.dev?type=server&features=tools)](https://modelcontextprotocol.io)
 [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_MCP_Server-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://insiders.vscode.dev/redirect/mcp/install?name=wthek-mcp&config=%7B%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22%40wthek%2Fmcp%22%5D%7D)
+[![WTHek MCP on mcprush](https://mcprush.com/badge/wthek-mcp/score.svg)](https://mcprush.com/to/wthek-mcp?ref=himanshubansal)
 ---
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/skillnter/wthek-mcp/main.yml)
 [![npm version](https://img.shields.io/npm/v/%40wthek%2Fmcp?color=brightgreen)](https://www.npmjs.com/package/%40wthek%2Fmcp)
